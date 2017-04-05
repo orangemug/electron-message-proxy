@@ -26,7 +26,7 @@ npm install orangemug/electron-message-proxy
 
 ## Usage
 
-```
+```js
 // main.js
 var proxy = require("electron-message-proxy/main")(browserWin);
 
@@ -41,14 +41,14 @@ proxy.send("foo", {
 
 The module will proxy message through the preload
 
-```
+```js
 // preload.js
 require("electron-message-proxy/preload");
 ```
 
 We're assuming renderer is compiled by webpack / browserify
 
-```
+```js
 // renderer.js
 var proxy = require("electron-message-proxy/renderer")();
 
