@@ -1,12 +1,12 @@
 # electron-message-proxy
 An event proxy for electron where contextIsolation is enabled and nodeIntegration disabled
 
-[![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg)][stability]
+[![stability-unstable](https://img.shields.io/badge/stability-experimental-orange.svg)][stability]
 [![Build Status](https://circleci.com/gh/orangemug/electron-message-proxy.png?style=shield)][circleci]
 [![Dependency Status](https://david-dm.org/orangemug/electron-message-proxy.svg)][dm-prod]
 [![Dev Dependency Status](https://david-dm.org/orangemug/electron-message-proxy/dev-status.svg)][dm-dev]
 
-[stability]:   https://github.com/orangemug/stability-badges#unstable
+[stability]:   https://github.com/orangemug/stability-badges#experimental
 [circleci]:    https://circleci.com/gh/orangemug/electron-message-proxy
 [dm-prod]:     https://david-dm.org/orangemug/electron-message-proxy
 [dm-dev]:      https://david-dm.org/orangemug/electron-message-proxy#info=devDependencies
