@@ -1,7 +1,14 @@
 {
   "name": "electron-message-proxy",
   "version": "0.0.0",
+  "scripts": {
+    "test": "./test/test.sh"
+  },
   "peerDependencies": {
+    "electron": "^1"
+  },
+  "devDependencies": {
+    "browserify": "^14.3.0",
     "electron": "^1"
   }
 }
