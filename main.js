@@ -5,16 +5,20 @@ var EventEmitter = require('events');
 module.exports = function(browserWin) {
   var emitter = new EventEmitter();
 
-  function ipcMainFn(event, message) {
-    if(event.sender === browserWin.webContents) {
-      emitter.send("", message);
+  function ipcMainFn(event, data) {
+    if(event.sender === browserWin.webContents && data.type === "renderer") {
+      emitter.emit(data.event, data.args);
     }
   }
 
   electron.ipcMain.on('electron-api-message', ipcMainFn);
 
-  emitter.send = function(data) {
-    browserWin.webContents.send("electron-api-message", data);
+  emitter.send = function(event, args) {
+    browserWin.webContents.send("electron-api-message", {
+      type: "main",
+      event: event,
+      args: args
+    });
   };
 
   emitter.destroy = function() {

@@ -6,18 +6,19 @@ module.exports = function() {
 
   function messageFn(e) {
     var data = e.data;
-    if(data.type === "from-host") {                                                     
-      console.log(">> from client", data.message);
-      emitter.emit("foo", data.message)
+
+    if(data.type === "main") {                                                     
+      emitter.emit(data.event, data.args);
     }
   }
 
   window.addEventListener("message", messageFn);
 
-  emitter.send = function(message) {
+  emitter.send = function(event, args) {
     window.postMessage({
-      type: "from-client",
-      message: message
+      type: "renderer",
+      event: event,
+      args: args
     }, "*");
   }
 

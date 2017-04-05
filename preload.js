@@ -3,15 +3,12 @@ var electron = require('electron');
   
 window.addEventListener("message", function(e) {
   var data = e.data;
-  if(data.type === "from-client") {                                                       
-    electron.ipcRenderer.send('electron-api-message', data.message);
+
+  if(data.type === "renderer") {                                                       
+    electron.ipcRenderer.send('electron-api-message', data);
   } 
 })
     
-electron.ipcRenderer.on('electron-api-message', (event, message) => {
-  console.log("MESSAGE", message);                                                        
-  window.postMessage({
-    type: "from-host",
-    message: message
-  }, "*");
+electron.ipcRenderer.on('electron-api-message', (event, data) => {
+  window.postMessage(data, "*");
 })  
