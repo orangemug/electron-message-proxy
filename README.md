@@ -12,7 +12,7 @@ An event proxy for electron where contextIsolation is enabled and nodeIntegratio
 [dm-dev]:      https://david-dm.org/orangemug/electron-message-proxy#info=devDependencies
 
 
-It can send message from `host -> preload -> renderer` and back again, via a simple event API.
+It can send message from `host -> preload -> renderer` and back again, via a simple event API. See [./tests](/tests) for an example of its usage.
 
 
 
