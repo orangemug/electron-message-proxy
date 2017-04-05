@@ -1,0 +1,7 @@
+{
+  "name": "electron-message-proxy",
+  "version": "0.0.0",
+  "peerDependencies": {
+    "electron": "^1"
+  }
+}
